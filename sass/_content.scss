@@ -1,0 +1,123 @@
+.container-new{
+    max-width: 1600px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.main{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    .content{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 700px;
+        .image{
+            width: 650px;
+            height: 650px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #CBE4E8;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: fill;
+            }
+        }
+    }
+    .login{
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+        &__title{
+            display: flex;
+            gap: 5px;
+            flex-direction: column;
+            h2{
+                font-size: 36px;
+                font-weight: 500;
+            }
+        }
+        input{
+            border: none;
+            border-bottom: 1px solid #00000070;
+            font-size: 16px;
+            font-weight: 400;
+            outline: none;
+            padding: 5px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            &:focus{
+                border-bottom: 1px solid #6a6aff;
+                box-shadow: 0 0 8px rgba(106, 106, 255, 0.5);
+            }
+        }
+        &__buttons{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .forgot-pass{
+                font-size: 14px;
+                color: var(--red);
+                cursor: pointer;
+                transition: 0.3s ease;
+                &:hover{
+                    color: #6a6aff;
+                }
+            }
+            .login-btn{
+                button{
+                    padding: 16px 40px;
+                    border-radius: 4px;
+                    border: none;
+                    background: var(--red);
+                    color: white;
+                    font-weight: 500;
+                    transition: 0.3s ease;
+                    cursor: pointer;
+                    &:hover{
+                        background: #6a6aff;
+                    }
+                }
+            }
+        }
+    }
+}
+@media(max-width: 786px){
+    .main{
+        .content{
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding-bottom: 100px;
+            .image{
+                display: none;
+                background: none;
+                width: 50%;
+                margin-right: 0;
+                img{
+                    width: 100%;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+
+}
+@media(max-width: 1080px){
+    .main{
+        .content{
+            .image{
+                background: none;
+                width: 45%;
+                margin-right: 20px;
+                img{
+                    width: 100%;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+
+}

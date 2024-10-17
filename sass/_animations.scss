@@ -1,0 +1,98 @@
+
+
+$transition-duration: 0.3s;
+$scale-factor: 1.05;
+
+.announce {
+    .info {
+        transition: transform $transition-duration ease, background-color $transition-duration ease;
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+    }
+}
+
+.footer {
+    .footer__section {
+        transition: transform $transition-duration ease, box-shadow $transition-duration ease;
+        &:hover {
+            transform: scale($scale-factor);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+    }
+    button {
+        transition: background-color $transition-duration ease, transform $transition-duration ease;
+        &:hover {
+            background-color: lighten(#f60, 10%);
+            transform: translateY(-3px);
+        }
+    }
+}
+
+.login {
+    &__buttons {
+        .login-btn button {
+            transition: background $transition-duration ease, transform $transition-duration ease;
+            &:hover {
+                background: #6a6aff;
+                transform: translateY(-3px) rotateY(5deg);
+            }
+        }
+        .forgot-pass {
+            transition: color $transition-duration ease;
+            &:hover {
+                color: #6a6aff;
+                text-decoration: underline;
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+.navbar {
+    .collection {
+        a {
+            transition: color $transition-duration ease, transform $transition-duration ease, text-shadow $transition-duration ease;
+            &:hover {
+                color: var(--red);
+                transform: translateY(-3px) scale(1.05);
+                text-shadow: 0 0 10px rgba(106, 106, 255, 0.7);
+            }
+        }
+    }
+    .burger {
+        transition: transform $transition-duration ease;
+        &:hover {
+            transform: rotate(90deg) scale(1.1);
+        }
+    }
+}
+
+.image {
+    transition: transform $transition-duration ease, box-shadow $transition-duration ease;
+    &:hover {
+        transform: perspective(600px) rotateY(10deg) scale(1.05);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+}
+
+.burger-menu {
+    transition: opacity $transition-duration ease;
+    &.show {
+        opacity: 1;
+        transform: translateZ(0);
+        animation: pop-in 0.3s forwards;
+    }
+}
+
+@keyframes pop-in {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
